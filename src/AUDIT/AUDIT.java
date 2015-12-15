@@ -18,13 +18,15 @@ public class AUDIT extends javax.swing.JFrame {
      */
     int A1,A2,A3,A4,A5,A6,A7,A8,A9,A10;
     public AUDIT() {
+        
         initComponents();
         RdioButton();
-        //this.setUndecorated(true);
-        Toolkit tk=Toolkit.getDefaultToolkit();
-        int x=(int)tk.getScreenSize().getWidth();
-        int y=(int)tk.getScreenSize().getHeight();
-        this.setSize(x,y);
+//        //this.setUndecorated(true);
+//        Toolkit tk=Toolkit.getDefaultToolkit();
+//        int x=(int)tk.getScreenSize().getWidth();
+//        int y=(int)tk.getScreenSize().getHeight();
+//        this.setSize(x,y);
+       setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     /**

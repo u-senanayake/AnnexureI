@@ -9,6 +9,7 @@ package MMQb;
  *
  * @author Udayanga
  */
+import java.awt.Toolkit;
 import state.*;
 public class MMQb extends javax.swing.JFrame {
     String q1="",q2="",q3="",q4="",q5="",q6="",q7="",q8="",q9="",q10="",
@@ -20,6 +21,7 @@ public class MMQb extends javax.swing.JFrame {
     public MMQb() {
         initComponents();
         radioGroup();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     public void setidName(CallMmqb ca){

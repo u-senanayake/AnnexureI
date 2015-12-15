@@ -20,6 +20,7 @@ import MMQa.*;
 import MMQb.*;
 import Q_LES_QSF.*;
 import TLFB.*;
+import java.awt.Toolkit;
 
 
 /**
@@ -37,6 +38,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         setDisable();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     /**

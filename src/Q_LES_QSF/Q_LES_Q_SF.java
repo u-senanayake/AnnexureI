@@ -9,6 +9,7 @@ package Q_LES_QSF;
  *
  * @author Udayanga
  */
+import java.awt.Toolkit;
 import state.*;
 public class Q_LES_Q_SF extends javax.swing.JFrame {
 int q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,
@@ -19,6 +20,7 @@ int q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,
     public Q_LES_Q_SF() {
         initComponents();
         radioGroup();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     public void setidName(CallQLesQSf ca){

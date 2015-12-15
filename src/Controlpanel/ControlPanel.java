@@ -7,6 +7,7 @@ package Controlpanel;
 
 import annexurei.DBConnect;
 import java.awt.HeadlessException;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -38,7 +39,7 @@ public class ControlPanel extends javax.swing.JFrame {
     String path="F:\\";
     public ControlPanel() {
         initComponents();
-        
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
    
@@ -390,7 +391,7 @@ public class ControlPanel extends javax.swing.JFrame {
         String sql="";
         //AUDIT T0
         if(TBL.getSelectedIndex()==0&&TIM.getSelectedIndex()==0){
-            file_name ="F:\\AUDIT.csv";
+            file_name =path+"\\AUDIT.csv";
             sql = "select * from audit";
         }
        //AUDIT T6
@@ -559,6 +560,7 @@ public class ControlPanel extends javax.swing.JFrame {
             pst=conn.prepareStatement(sql);
             pst.setString(1,userName.getText() );
             pst.setString(2,password.getText());
+            pst.execute();
             JOptionPane.showMessageDialog(null, "Saved");
             }
             catch(SQLException | HeadlessException ex){
@@ -582,7 +584,7 @@ public class ControlPanel extends javax.swing.JFrame {
     public void saveCSV() {
             try{
                 TableModel model = jTable1.getModel();
-                FileWriter excel = new FileWriter(path);
+                FileWriter excel = new FileWriter(file_name);
                 for(int i = 0; i < model.getColumnCount(); i++){
                 excel.write(model.getColumnName(i) + ',');
                 }

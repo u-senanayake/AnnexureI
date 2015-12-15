@@ -6,6 +6,7 @@
 package annexurei;
 
 import java.awt.HeadlessException;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -29,7 +30,7 @@ public class NewUser extends javax.swing.JFrame {
     PreparedStatement pst=null;
     public NewUser() {
         initComponents();
-        
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     private void createDatabase(){
@@ -1047,7 +1048,7 @@ sta.setText(e.getMessage());
         createAudit_6Table();
         createAuditTable();
         insertToTable();    
-        sta.setText("Database and user created successfully. Pleace colse this and login aganin");
+        sta.setText("Database created.Close this and login aganin");
 // TODO add your handling code here:
     }//GEN-LAST:event_BTN_CREATEActionPerformed
 

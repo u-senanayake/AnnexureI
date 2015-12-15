@@ -6,6 +6,7 @@
 package BloodTest;
 
 import AUDIT.CallAudit;
+import java.awt.Toolkit;
 import state.*;
 
 /**
@@ -19,6 +20,7 @@ public class Bloodtest extends javax.swing.JFrame {
      */
     public Bloodtest() {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     public void setidName(CallBloodtest ca){

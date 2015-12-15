@@ -5,6 +5,7 @@
  */
 package MMQa;
 
+import java.awt.Toolkit;
 import javax.swing.JScrollPane;
 import state.*;
 
@@ -23,7 +24,7 @@ public class MMQa extends javax.swing.JFrame {
     public MMQa() {
         initComponents();
         radioGroup();
-        
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     public void setidName(CallMmqa ca){
