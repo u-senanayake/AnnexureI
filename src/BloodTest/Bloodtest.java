@@ -57,6 +57,7 @@ public class Bloodtest extends javax.swing.JFrame {
         BTN_ADD = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Blood Test");
         setPreferredSize(new java.awt.Dimension(1530, 750));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)));

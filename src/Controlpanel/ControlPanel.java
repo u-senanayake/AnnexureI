@@ -20,6 +20,11 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
+import AUDIT.*;
+import BloodTest.BloodTestDB;
+import BloodTest.DBHelpBloodTest;
+import MINI.DBHelpMini;
+import MINI.mini;
 
 /**
  *
@@ -36,14 +41,79 @@ public class ControlPanel extends javax.swing.JFrame {
     ResultSet rs=null;
     PreparedStatement pst=null;
     String file_name="";
-    String path="F:\\";
+    String path="";
     public ControlPanel() {
         initComponents();
+        enabledFalse();       
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
-   
-    
+    private void enabledFalse(){
+         TXTT1.setEnabled(false);
+                TXTT2.setEnabled(false);
+                TXTT3.setEnabled(false);
+                TXTT4.setEnabled(false);
+                TXTT5.setEnabled(false);
+                TXTT6.setEnabled(false);
+                TXTT7.setEnabled(false);
+                TXTT8.setEnabled(false);
+                TXTT9.setEnabled(false);
+                TXTT10.setEnabled(false);
+                TXTT11.setEnabled(false);
+                TXTT12.setEnabled(false);
+                TXTT13.setEnabled(false);
+                TXTT14.setEnabled(false);
+            TXTT15.setEnabled(false);
+            TXTT16.setEnabled(false);
+            TXTT17.setEnabled(false);
+            TXTT18.setEnabled(false);
+            TXTT19.setEnabled(false);
+            TXT20.setEnabled(false);
+            TXT21.setEnabled(false);
+            TXT22.setEnabled(false);
+            TXT23.setEnabled(false);
+            TXT24.setEnabled(false);
+            TXT25.setEnabled(false);
+            TXT26.setEnabled(false);
+            TXT27.setEnabled(false);
+            TXT28.setEnabled(false);
+            TXT29.setEnabled(false);
+            TXT30.setEnabled(false);
+            TXT31.setEnabled(false);
+    }
+    private void setTextNull(){
+                TXTT1.setText("");
+                TXTT2.setText("");
+                TXTT3.setText("");
+                TXTT4.setText("");
+                TXTT5.setText("");
+                TXTT6.setText("");
+                TXTT7.setText("");
+                TXTT8.setText("");
+                TXTT9.setText("");
+                TXTT10.setText("");
+                TXTT11.setText("");
+                TXTT12.setText("");
+                TXTT13.setText("");
+                TXTT14.setText("");
+            TXTT15.setText("");
+            TXTT16.setText("");
+            TXTT17.setText("");
+            TXTT18.setText("");
+            TXTT19.setText("");
+            TXT20.setText("");
+            TXT21.setText("");
+            TXT22.setText("");
+            TXT23.setText("");
+            TXT24.setText("");
+            TXT25.setText("");
+            TXT26.setText("");
+            TXT27.setText("");
+            TXT28.setText("");
+            TXT29.setText("");
+            TXT30.setText("");
+            TXT31.setText("");
+    } 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,6 +136,78 @@ public class ControlPanel extends javax.swing.JFrame {
         BTN_PATH = new javax.swing.JButton();
         PATH = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        TXTT16 = new javax.swing.JTextField();
+        TXTT18 = new javax.swing.JTextField();
+        TXTT17 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        TXTT13 = new javax.swing.JTextField();
+        TXTT15 = new javax.swing.JTextField();
+        TXTT14 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        TXTT12 = new javax.swing.JTextField();
+        TXTT19 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        TXTT11 = new javax.swing.JTextField();
+        TXT20 = new javax.swing.JTextField();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        TXTT6 = new javax.swing.JTextField();
+        TXTT8 = new javax.swing.JTextField();
+        TXTT7 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        TXTT3 = new javax.swing.JTextField();
+        TXTT5 = new javax.swing.JTextField();
+        TXTT4 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        TXTT2 = new javax.swing.JTextField();
+        TXTT9 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        TXTT1 = new javax.swing.JTextField();
+        TXTT10 = new javax.swing.JTextField();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        TXT26 = new javax.swing.JTextField();
+        TXT28 = new javax.swing.JTextField();
+        TXT27 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        TXT23 = new javax.swing.JTextField();
+        TXT25 = new javax.swing.JTextField();
+        TXT24 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        TXT22 = new javax.swing.JTextField();
+        TXT29 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        TXT21 = new javax.swing.JTextField();
+        TXT30 = new javax.swing.JTextField();
+        jPanel16 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        BTN_UPDT = new javax.swing.JButton();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        TXT31 = new javax.swing.JTextField();
+        jPanel18 = new javax.swing.JPanel();
+        id = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -89,7 +231,7 @@ public class ControlPanel extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1530, 750));
+        setTitle("Cotrol Panel");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -102,13 +244,28 @@ public class ControlPanel extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setText("Show");
 
         TBL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUDIT", "Blood Test", "MINI", "MMQa", "MMQb", "Q LES Q SF", "TLFB" }));
+        TBL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TBLActionPerformed(evt);
+            }
+        });
 
         TIM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "T0", "T6", "T12" }));
+        TIM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TIMActionPerformed(evt);
+            }
+        });
 
         BTN_SHOW.setText("Show");
         BTN_SHOW.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +313,7 @@ public class ControlPanel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BTN_PATH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PATH)
+                .addComponent(PATH, javax.swing.GroupLayout.DEFAULT_SIZE, 931, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BTN_SAVE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -179,6 +336,425 @@ public class ControlPanel extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel17.setText("17");
+
+        jLabel12.setText("12");
+
+        jLabel13.setText("13");
+
+        jLabel14.setText("14");
+
+        jLabel15.setText("15");
+
+        jLabel19.setText("19");
+
+        jLabel20.setText("20");
+
+        jLabel18.setText("18");
+
+        jLabel16.setText("16");
+
+        jLabel11.setText("11");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TXTT17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT19, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT16, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT18, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(TXTT11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                    .addComponent(TXTT12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                    .addComponent(jLabel12))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(TXTT13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addComponent(jLabel13))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(TXTT14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(jLabel14))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(TXTT15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel15))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(TXTT16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel16))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(TXTT17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel17))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TXTT18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TXTT19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TXT20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20))
+                .addContainerGap())
+        );
+
+        jLabel21.setText("7");
+
+        jLabel22.setText("2");
+
+        jLabel23.setText("3");
+
+        jLabel24.setText("4");
+
+        jLabel25.setText("5");
+
+        jLabel26.setText("9");
+
+        jLabel27.setText("10");
+
+        jLabel28.setText("8");
+
+        jLabel29.setText("6");
+
+        jLabel30.setText("1");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel27))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TXTT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(TXTT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel14Layout.createSequentialGroup()
+                                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel14Layout.createSequentialGroup()
+                                                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                    .addComponent(TXTT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                    .addComponent(jLabel22))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(TXTT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addComponent(jLabel23))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(TXTT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(jLabel24))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(TXTT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel25))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(TXTT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel29))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(TXTT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel21))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TXTT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel28))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TXTT9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TXTT10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27))
+                .addContainerGap())
+        );
+
+        jLabel31.setText("27");
+
+        jLabel32.setText("22");
+
+        jLabel33.setText("23");
+
+        jLabel34.setText("24");
+
+        jLabel35.setText("25");
+
+        jLabel36.setText("29");
+
+        jLabel37.setText("30");
+
+        jLabel38.setText("28");
+
+        jLabel39.setText("26");
+
+        jLabel40.setText("21");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel40)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel37))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TXT27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT29, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT30, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT23, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT24, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT25, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT26, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(TXT21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                    .addComponent(TXT22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                    .addComponent(jLabel32))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(TXT23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addComponent(jLabel33))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(TXT24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(jLabel34))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(TXT25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel35))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(TXT26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel39))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(TXT27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel31))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TXT28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel38))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TXT29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TXT30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37))
+                .addContainerGap())
+        );
+
+        jButton3.setText("Edit");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        BTN_UPDT.setText("Update");
+        BTN_UPDT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_UPDTActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BTN_UPDT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BTN_UPDT, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel42.setText("31");
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel42)
+                .addGap(18, 18, 18)
+                .addComponent(TXT31, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(TXT31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel18.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)));
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(228, Short.MAX_VALUE))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -187,7 +763,10 @@ public class ControlPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 907, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -196,8 +775,10 @@ public class ControlPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Data", jPanel2);
@@ -356,7 +937,7 @@ public class ControlPanel extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(426, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Profile", jPanel3);
@@ -382,17 +963,28 @@ public class ControlPanel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BTN_SAVEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_SAVEActionPerformed
-        saveCSV();   
-        System.out.println(file_name);
+        //System.out.println("Path"+path);
+        //System.out.println("File name"+file_name);
+        
+        
+            saveCSV();
+       
+            
+           
+        
     }//GEN-LAST:event_BTN_SAVEActionPerformed
 
     private void BTN_SHOWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_SHOWActionPerformed
             
         String sql="";
+        
+        
         //AUDIT T0
         if(TBL.getSelectedIndex()==0&&TIM.getSelectedIndex()==0){
-            file_name =path+"\\AUDIT.csv";
+           
+            file_name ="\\AUDIT.csv";
             sql = "select * from audit";
+            
         }
        //AUDIT T6
         if(TBL.getSelectedIndex()==0&&TIM.getSelectedIndex()==1){
@@ -400,27 +992,27 @@ public class ControlPanel extends javax.swing.JFrame {
         }
        // AUDIT T12 
         if(TBL.getSelectedIndex()==0&&TIM.getSelectedIndex()==2){
-            file_name =path+"\\AUDIT_12.csv";
+            file_name ="\\AUDIT_12.csv";
             sql = "select * from audit_12";
         }
         //BLOOD T0)
         if(TBL.getSelectedIndex()==1&&TIM.getSelectedIndex()==0){
-            file_name =path+"\\Blood_T0.csv";
+            file_name ="\\Blood_T0.csv";
             sql="SELECT * FROM blood_test";
         }
         //Boold t6
         if(TBL.getSelectedIndex()==1&&TIM.getSelectedIndex()==1){
-                file_name =path+"\\Blood_T6.csv";
+                file_name ="\\Blood_T6.csv";
                 sql = "select * from blood_test_6";
         }
         //blood t12
         if(TBL.getSelectedIndex()==1&&TIM.getSelectedIndex()==2){
-                file_name =path+"\\Blood_T12.csv";
+                file_name ="\\Blood_T12.csv";
                 sql = "select * from blood_test_12";
         }
          //MINI T0)
         if(TBL.getSelectedIndex()==2&&TIM.getSelectedIndex()==0){
-                file_name =path+"\\MINI.csv";
+                file_name ="\\MINI.csv";
                 sql = "select * from mini";
         }
         //MINI t6
@@ -433,72 +1025,72 @@ public class ControlPanel extends javax.swing.JFrame {
         }
          //MMQa T0)
         if(TBL.getSelectedIndex()==3&&TIM.getSelectedIndex()==0){
-                 file_name =path+"\\MMQa_T0.csv";
+                 file_name ="\\MMQa_T0.csv";
                  sql = "select * from mmqa";
         }
         //MMQa t6
         if(TBL.getSelectedIndex()==3&&TIM.getSelectedIndex()==1){
-            file_name =path+"\\MMQa_T6.csv";
+            file_name ="\\MMQa_T6.csv";
             sql = "select * from mmqa_6";
             
         }
         //MMQa t12
         if(TBL.getSelectedIndex()==3&&TIM.getSelectedIndex()==2){
-            file_name =path+"\\MMQa_T12.csv";
+            file_name ="\\MMQa_T12.csv";
             sql = "select * from mmqa_12";
             
         }
          //MMQb T0)
         if(TBL.getSelectedIndex()==4&&TIM.getSelectedIndex()==0){
-            file_name =path+"\\MMQb_T0.csv";
+            file_name ="\\MMQb_T0.csv";
             sql = "select * from mmqb";
             
         }
         //MMQb t6
         if(TBL.getSelectedIndex()==4&&TIM.getSelectedIndex()==1){
-            file_name =path+"\\MMQb_T6.csv";
+            file_name ="\\MMQb_T6.csv";
             sql = "select * from mmqb_6";
             
         }
         //MMQb t12
         if(TBL.getSelectedIndex()==4&&TIM.getSelectedIndex()==2){
-            file_name =path+"\\MMQb_T12.csv";
+            file_name ="\\MMQb_T12.csv";
             sql = "select * from mmqb_12";
             
         }
          //QLESQSF T0)
         if(TBL.getSelectedIndex()==5&&TIM.getSelectedIndex()==0){
-            file_name =path+"\\Q-LEFQSF_0.csv";
+            file_name ="\\Q-LEFQSF_0.csv";
             sql = "select * from q_lef_q_sf";
            
         }
         //QLESQSF t6
         if(TBL.getSelectedIndex()==5&&TIM.getSelectedIndex()==1){
-            file_name =path+"\\Q-LEFQSF_6.csv";
+            file_name ="\\Q-LEFQSF_6.csv";
             sql = "select * from q_lef_q_sf_6";
             
         }
         //LLESQSF t12
         if(TBL.getSelectedIndex()==5&&TIM.getSelectedIndex()==2){
-            file_name =path+"\\Q-LEFQSF_12.csv";
+            file_name ="\\Q-LEFQSF_12.csv";
             sql = "select * from q_lef_q_sf_12";
             
         }
          //tldb T0)
         if(TBL.getSelectedIndex()==6&&TIM.getSelectedIndex()==0){
-            file_name =path+"\\TLFB_0.csv";
+            file_name ="\\TLFB_0.csv";
             sql = "select * from tlfb";
            
         }
         //tlfb t6
         if(TBL.getSelectedIndex()==6&&TIM.getSelectedIndex()==1){
-            file_name =path+"\\TLFB_6.csv";
+            file_name ="\\TLFB_6.csv";
             sql = "select * from tlfb_6";
             
         }
         //tlfb t12
         if(TBL.getSelectedIndex()==6&&TIM.getSelectedIndex()==2){
-            file_name =path+"\\TLFB_12.csv";
+            file_name ="\\TLFB_12.csv";
             sql = "select * from tlfb_12";
             
         }
@@ -527,6 +1119,7 @@ public class ControlPanel extends javax.swing.JFrame {
                 _pss=rs.getString("password");
             }
         }
+        
         catch(SQLException | HeadlessException ex){
             JOptionPane.showMessageDialog(null, ex.getMessage()+"User name or password incorrect");
         }
@@ -573,18 +1166,439 @@ public class ControlPanel extends javax.swing.JFrame {
         JFileChooser fileChooser=new JFileChooser();
         fileChooser.showOpenDialog(null);
         File f=fileChooser.getCurrentDirectory();
-         path=f.getAbsolutePath();
+        path=f.getAbsolutePath();
         PATH.setText(path);
+        System.out.println(path);
+        
     }//GEN-LAST:event_BTN_PATHActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void TBLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBLActionPerformed
+        PATH.setText("");
+        enabledFalse();
+        setTextNull();
+    }//GEN-LAST:event_TBLActionPerformed
+
+    private void TIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TIMActionPerformed
+        PATH.setText("");
+        enabledFalse();
+        setTextNull();
+    }//GEN-LAST:event_TIMActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+            int row=jTable1.getSelectedRow();
+           // String table_click_id=(jTable1.getModel().getValueAt(row, 0).toString());
+            
+           if(TBL.getSelectedIndex()==0){
+                id.setText(jTable1.getModel().getValueAt(row, 0).toString());
+                TXTT1.setText(jTable1.getModel().getValueAt(row, 1).toString());
+                TXTT2.setText(jTable1.getModel().getValueAt(row, 2).toString());
+                TXTT3.setText(jTable1.getModel().getValueAt(row, 3).toString());
+                TXTT4.setText(jTable1.getModel().getValueAt(row, 4).toString());
+                TXTT5.setText(jTable1.getModel().getValueAt(row, 5).toString());
+                TXTT6.setText(jTable1.getModel().getValueAt(row, 6).toString());
+                TXTT7.setText(jTable1.getModel().getValueAt(row, 7).toString());
+                TXTT8.setText(jTable1.getModel().getValueAt(row, 8).toString());
+                TXTT9.setText(jTable1.getModel().getValueAt(row, 9).toString());
+                TXTT10.setText(jTable1.getModel().getValueAt(row,10).toString());
+           }
+           if(TBL.getSelectedIndex()==1){
+               id.setText(jTable1.getModel().getValueAt(row, 0).toString());
+               TXTT1.setText(jTable1.getModel().getValueAt(row, 1).toString());
+                TXTT2.setText(jTable1.getModel().getValueAt(row, 2).toString());
+                TXTT3.setText(jTable1.getModel().getValueAt(row, 3).toString());
+           }
+           if(TBL.getSelectedIndex()==2){
+               id.setText(jTable1.getModel().getValueAt(row, 0).toString());
+               TXTT1.setText(jTable1.getModel().getValueAt(row, 1).toString());
+                TXTT2.setText(jTable1.getModel().getValueAt(row, 2).toString());
+                TXTT3.setText(jTable1.getModel().getValueAt(row, 3).toString());
+                TXTT4.setText(jTable1.getModel().getValueAt(row, 4).toString());
+           }
+           if(TBL.getSelectedIndex()==3){
+               id.setText(jTable1.getModel().getValueAt(row, 0).toString());
+               TXTT1.setText(jTable1.getModel().getValueAt(row, 1).toString());
+                TXTT2.setText(jTable1.getModel().getValueAt(row, 2).toString());
+                TXTT3.setText(jTable1.getModel().getValueAt(row, 3).toString());
+                TXTT4.setText(jTable1.getModel().getValueAt(row, 4).toString());
+                TXTT5.setText(jTable1.getModel().getValueAt(row, 5).toString());
+                TXTT6.setText(jTable1.getModel().getValueAt(row, 6).toString());
+                TXTT7.setText(jTable1.getModel().getValueAt(row, 7).toString());
+                TXTT8.setText(jTable1.getModel().getValueAt(row, 8).toString());
+                TXTT9.setText(jTable1.getModel().getValueAt(row, 9).toString());
+                TXTT10.setText(jTable1.getModel().getValueAt(row,10).toString());
+                TXTT11.setText(jTable1.getModel().getValueAt(row, 11).toString());
+                TXTT12.setText(jTable1.getModel().getValueAt(row, 12).toString());
+                TXTT13.setText(jTable1.getModel().getValueAt(row, 13).toString());
+                TXTT14.setText(jTable1.getModel().getValueAt(row, 14).toString());
+            TXTT15.setText(jTable1.getModel().getValueAt(row, 15).toString());
+            TXTT16.setText(jTable1.getModel().getValueAt(row, 16).toString());
+            TXTT17.setText(jTable1.getModel().getValueAt(row, 17).toString());
+            TXTT18.setText(jTable1.getModel().getValueAt(row, 18).toString());
+            TXTT19.setText(jTable1.getModel().getValueAt(row, 19).toString());
+            TXT20.setText(jTable1.getModel().getValueAt(row, 20).toString());
+            TXT21.setText(jTable1.getModel().getValueAt(row, 21).toString());
+            TXT22.setText(jTable1.getModel().getValueAt(row, 22).toString());
+            TXT23.setText(jTable1.getModel().getValueAt(row, 23).toString());
+            TXT24.setText(jTable1.getModel().getValueAt(row, 24).toString());
+            TXT25.setText(jTable1.getModel().getValueAt(row, 25).toString());
+            TXT26.setText(jTable1.getModel().getValueAt(row, 26).toString());
+            TXT27.setText(jTable1.getModel().getValueAt(row, 27).toString());
+            TXT28.setText(jTable1.getModel().getValueAt(row, 28).toString());
+            TXT29.setText(jTable1.getModel().getValueAt(row, 29).toString());
+            TXT30.setText(jTable1.getModel().getValueAt(row, 30).toString());
+           }
+           if(TBL.getSelectedIndex()==4){
+               id.setText(jTable1.getModel().getValueAt(row, 0).toString());
+               TXTT1.setText(jTable1.getModel().getValueAt(row, 1).toString());
+                TXTT2.setText(jTable1.getModel().getValueAt(row, 2).toString());
+                TXTT3.setText(jTable1.getModel().getValueAt(row, 3).toString());
+                TXTT4.setText(jTable1.getModel().getValueAt(row, 4).toString());
+                TXTT5.setText(jTable1.getModel().getValueAt(row, 5).toString());
+                TXTT6.setText(jTable1.getModel().getValueAt(row, 6).toString());
+                TXTT7.setText(jTable1.getModel().getValueAt(row, 7).toString());
+                TXTT8.setText(jTable1.getModel().getValueAt(row, 8).toString());
+                TXTT9.setText(jTable1.getModel().getValueAt(row, 9).toString());
+                TXTT10.setText(jTable1.getModel().getValueAt(row,10).toString());
+                TXTT11.setText(jTable1.getModel().getValueAt(row, 11).toString());
+                TXTT12.setText(jTable1.getModel().getValueAt(row, 12).toString());
+                TXTT13.setText(jTable1.getModel().getValueAt(row, 13).toString());
+                TXTT14.setText(jTable1.getModel().getValueAt(row, 14).toString());
+            TXTT15.setText(jTable1.getModel().getValueAt(row, 15).toString());
+            TXTT16.setText(jTable1.getModel().getValueAt(row, 16).toString());
+            TXTT17.setText(jTable1.getModel().getValueAt(row, 17).toString());
+            TXTT18.setText(jTable1.getModel().getValueAt(row, 18).toString());
+            TXTT19.setText(jTable1.getModel().getValueAt(row, 19).toString());
+            TXT20.setText(jTable1.getModel().getValueAt(row, 20).toString());
+            TXT21.setText(jTable1.getModel().getValueAt(row, 21).toString());
+            TXT22.setText(jTable1.getModel().getValueAt(row, 22).toString());
+            TXT23.setText(jTable1.getModel().getValueAt(row, 23).toString());
+            TXT24.setText(jTable1.getModel().getValueAt(row, 24).toString());
+            TXT25.setText(jTable1.getModel().getValueAt(row, 25).toString());
+            TXT26.setText(jTable1.getModel().getValueAt(row, 26).toString());
+            TXT27.setText(jTable1.getModel().getValueAt(row, 27).toString());
+            TXT28.setText(jTable1.getModel().getValueAt(row, 28).toString());
+            TXT29.setText(jTable1.getModel().getValueAt(row, 29).toString());
+            TXT30.setText(jTable1.getModel().getValueAt(row, 30).toString());
+           }
+           if(TBL.getSelectedIndex()==5){
+               id.setText(jTable1.getModel().getValueAt(row, 0).toString());
+               TXTT1.setText(jTable1.getModel().getValueAt(row, 1).toString());
+                TXTT2.setText(jTable1.getModel().getValueAt(row, 2).toString());
+                TXTT3.setText(jTable1.getModel().getValueAt(row, 3).toString());
+                TXTT4.setText(jTable1.getModel().getValueAt(row, 4).toString());
+                TXTT5.setText(jTable1.getModel().getValueAt(row, 5).toString());
+                TXTT6.setText(jTable1.getModel().getValueAt(row, 6).toString());
+                TXTT7.setText(jTable1.getModel().getValueAt(row, 7).toString());
+                TXTT8.setText(jTable1.getModel().getValueAt(row, 8).toString());
+                TXTT9.setText(jTable1.getModel().getValueAt(row, 9).toString());
+                TXTT10.setText(jTable1.getModel().getValueAt(row,10).toString());
+                TXTT11.setText(jTable1.getModel().getValueAt(row, 11).toString());
+                TXTT12.setText(jTable1.getModel().getValueAt(row, 12).toString());
+                TXTT13.setText(jTable1.getModel().getValueAt(row, 13).toString());
+                TXTT14.setText(jTable1.getModel().getValueAt(row, 14).toString());
+            TXTT15.setText(jTable1.getModel().getValueAt(row, 15).toString());
+            TXTT16.setText(jTable1.getModel().getValueAt(row, 16).toString());
+           }
+           if(TBL.getSelectedIndex()==6){
+               TXTT1.setText(jTable1.getModel().getValueAt(row, 1).toString());
+                TXTT2.setText(jTable1.getModel().getValueAt(row, 2).toString());
+                TXTT3.setText(jTable1.getModel().getValueAt(row, 3).toString());
+                TXTT4.setText(jTable1.getModel().getValueAt(row, 4).toString());
+                TXTT5.setText(jTable1.getModel().getValueAt(row, 5).toString());
+                TXTT6.setText(jTable1.getModel().getValueAt(row, 6).toString());
+                TXTT7.setText(jTable1.getModel().getValueAt(row, 7).toString());
+                TXTT8.setText(jTable1.getModel().getValueAt(row, 8).toString());
+                TXTT9.setText(jTable1.getModel().getValueAt(row, 9).toString());
+                TXTT10.setText(jTable1.getModel().getValueAt(row,10).toString());
+                TXTT11.setText(jTable1.getModel().getValueAt(row, 11).toString());
+                TXTT12.setText(jTable1.getModel().getValueAt(row, 12).toString());
+                TXTT13.setText(jTable1.getModel().getValueAt(row, 13).toString());
+                TXTT14.setText(jTable1.getModel().getValueAt(row, 14).toString());
+            TXTT15.setText(jTable1.getModel().getValueAt(row, 15).toString());
+            TXTT16.setText(jTable1.getModel().getValueAt(row, 16).toString());
+            TXTT17.setText(jTable1.getModel().getValueAt(row, 17).toString());
+            TXTT18.setText(jTable1.getModel().getValueAt(row, 18).toString());
+            TXTT19.setText(jTable1.getModel().getValueAt(row, 19).toString());
+            TXT20.setText(jTable1.getModel().getValueAt(row, 20).toString());
+            TXT21.setText(jTable1.getModel().getValueAt(row, 21).toString());
+            TXT22.setText(jTable1.getModel().getValueAt(row, 22).toString());
+            TXT23.setText(jTable1.getModel().getValueAt(row, 23).toString());
+            TXT24.setText(jTable1.getModel().getValueAt(row, 24).toString());
+            TXT25.setText(jTable1.getModel().getValueAt(row, 25).toString());
+            TXT26.setText(jTable1.getModel().getValueAt(row, 26).toString());
+            TXT27.setText(jTable1.getModel().getValueAt(row, 27).toString());
+            TXT28.setText(jTable1.getModel().getValueAt(row, 28).toString());
+            TXT29.setText(jTable1.getModel().getValueAt(row, 29).toString());
+            TXT30.setText(jTable1.getModel().getValueAt(row, 30).toString());
+            TXT31.setText(jTable1.getModel().getValueAt(row, 31).toString());
+           }
+           
+                
+            
+            
+            //TXT_NAME.setText(TBL_PATIENT.getModel().getValueAt(row, 1).toString());
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //AUDIT
+        if(TBL.getSelectedIndex()==0){
+                TXTT1.setEnabled(true);
+                TXTT2.setEnabled(true);
+                TXTT3.setEnabled(true);
+                TXTT4.setEnabled(true);
+                TXTT5.setEnabled(true);
+                TXTT6.setEnabled(true);
+                TXTT7.setEnabled(true);
+                TXTT8.setEnabled(true);
+                TXTT9.setEnabled(true);
+                TXTT10.setEnabled(true);
+        }
+        if(TBL.getSelectedIndex()==1){
+            TXTT1.setEnabled(true);
+            TXTT2.setEnabled(true);
+            TXTT3.setEnabled(true);
+        }
+        if(TBL.getSelectedIndex()==2){
+                TXTT1.setEnabled(true);
+                TXTT2.setEnabled(true);
+                TXTT3.setEnabled(true);
+                TXTT4.setEnabled(true);
+        }
+        if(TBL.getSelectedIndex()==3){
+                TXTT1.setEnabled(true);
+                TXTT2.setEnabled(true);
+                TXTT3.setEnabled(true);
+                TXTT4.setEnabled(true);
+                TXTT5.setEnabled(true);
+                TXTT6.setEnabled(true);
+                TXTT7.setEnabled(true);
+                TXTT8.setEnabled(true);
+                TXTT9.setEnabled(true);
+                TXTT10.setEnabled(true);
+                TXTT11.setEnabled(true);
+                TXTT12.setEnabled(true);
+                TXTT13.setEnabled(true);
+                TXTT14.setEnabled(true);
+                TXTT15.setEnabled(true);
+                TXTT16.setEnabled(true);
+                TXTT17.setEnabled(true);
+                TXTT18.setEnabled(true);
+                TXTT19.setEnabled(true);
+                TXT20.setEnabled(true);
+                TXT21.setEnabled(true);
+                TXT22.setEnabled(true);
+                TXT23.setEnabled(true);
+                TXT24.setEnabled(true);
+                TXT25.setEnabled(true);
+                TXT26.setEnabled(true);
+                TXT27.setEnabled(true);
+                TXT28.setEnabled(true);
+                TXT29.setEnabled(true);
+                TXT30.setEnabled(true);
+        }
+        if(TBL.getSelectedIndex()==4){
+                TXTT1.setEnabled(true);
+                TXTT2.setEnabled(true);
+                TXTT3.setEnabled(true);
+                TXTT4.setEnabled(true);
+                TXTT5.setEnabled(true);
+                TXTT6.setEnabled(true);
+                TXTT7.setEnabled(true);
+                TXTT8.setEnabled(true);
+                TXTT9.setEnabled(true);
+                TXTT10.setEnabled(true);
+                TXTT11.setEnabled(true);
+                TXTT12.setEnabled(true);
+                TXTT13.setEnabled(true);
+                TXTT14.setEnabled(true);
+                TXTT15.setEnabled(true);
+                TXTT16.setEnabled(true);
+                TXTT17.setEnabled(true);
+                TXTT18.setEnabled(true);
+                TXTT19.setEnabled(true);
+                TXT20.setEnabled(true);
+                TXT21.setEnabled(true);
+                TXT22.setEnabled(true);
+                TXT23.setEnabled(true);
+                TXT24.setEnabled(true);
+                TXT25.setEnabled(true);
+                TXT26.setEnabled(true);
+                TXT27.setEnabled(true);
+                TXT28.setEnabled(true);
+                TXT29.setEnabled(true);
+                TXT30.setEnabled(true);
+        }
+        if(TBL.getSelectedIndex()==5){
+                TXTT1.setEnabled(true);
+                TXTT2.setEnabled(true);
+                TXTT3.setEnabled(true);
+                TXTT4.setEnabled(true);
+                TXTT5.setEnabled(true);
+                TXTT6.setEnabled(true);
+                TXTT7.setEnabled(true);
+                TXTT8.setEnabled(true);
+                TXTT9.setEnabled(true);
+                TXTT10.setEnabled(true);
+                TXTT11.setEnabled(true);
+                TXTT12.setEnabled(true);
+                TXTT13.setEnabled(true);
+                TXTT14.setEnabled(true);
+                TXTT15.setEnabled(true);
+                TXTT16.setEnabled(true);
+        }
+        if(TBL.getSelectedIndex()==6){
+                TXTT1.setEnabled(true);
+                TXTT2.setEnabled(true);
+                TXTT3.setEnabled(true);
+                TXTT4.setEnabled(true);
+                TXTT5.setEnabled(true);
+                TXTT6.setEnabled(true);
+                TXTT7.setEnabled(true);
+                TXTT8.setEnabled(true);
+                TXTT9.setEnabled(true);
+                TXTT10.setEnabled(true);
+                TXTT11.setEnabled(true);
+                TXTT12.setEnabled(true);
+                TXTT13.setEnabled(true);
+                TXTT14.setEnabled(true);
+                TXTT15.setEnabled(true);
+                TXTT16.setEnabled(true);
+                TXTT17.setEnabled(true);
+                TXTT18.setEnabled(true);
+                TXTT19.setEnabled(true);
+                TXT20.setEnabled(true);
+                TXT21.setEnabled(true);
+                TXT22.setEnabled(true);
+                TXT23.setEnabled(true);
+                TXT24.setEnabled(true);
+                TXT25.setEnabled(true);
+                TXT26.setEnabled(true);
+                TXT27.setEnabled(true);
+                TXT28.setEnabled(true);
+                TXT29.setEnabled(true);
+                TXT30.setEnabled(true);
+                TXT31.setEnabled(true);
+        }
+        
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void BTN_UPDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_UPDTActionPerformed
+           String _id=id.getText();
+           DBHelpAudit db= new DBHelpAudit();
+           DBHelpBloodTest db2= new DBHelpBloodTest();
+           DBHelpMini db3= new DBHelpMini();
+        String up1=TXTT1.getText();
+        String up2=TXTT2.getText();
+        String up3=TXTT3.getText();
+        String up4=TXTT4.getText();
+        String up5=TXTT5.getText();
+        String up6=TXTT6.getText();
+        String up7=TXTT7.getText();
+        String up8=TXTT8.getText();
+        String up9=TXTT9.getText();
+        String up10=TXTT10.getText();
+        String up11=TXTT11.getText();
+        String up12=TXTT12.getText();
+        String up13=TXTT13.getText();
+        String up14=TXTT14.getText();
+        String up15=TXTT15.getText();
+        String up16=TXTT16.getText();
+        String up17=TXTT17.getText();
+        String up18=TXTT18.getText();
+        String up19=TXTT19.getText();
+        String up20=TXT20.getText();
+        String up21=TXT21.getText();
+        String up22=TXT22.getText();
+        String up23=TXT23.getText();
+        String up24=TXT24.getText();
+        String up25=TXT25.getText();
+        String up26=TXT26.getText();
+        String up27=TXT27.getText();
+        String up28=TXT28.getText();
+        String up29=TXT29.getText();
+        String up30=TXT30.getText();
+        String up31=TXT31.getText();
+        //AUDIT    
+        if(TBL.getSelectedIndex()==0&&TIM.getSelectedIndex()==0){
+            db.updateAudit(new AuditDB(_id, Integer.valueOf(up1), Integer.valueOf(up2), Integer.valueOf(up3), Integer.valueOf(up4), Integer.valueOf(up5), Integer.valueOf(up6),Integer.valueOf(up7),Integer.valueOf(up8), Integer.valueOf(up9), Integer.valueOf(up10)));
+        }
+        if(TBL.getSelectedIndex()==0&&TIM.getSelectedIndex()==1){
+            db.updateAudit_6(new AuditDB(_id, Integer.valueOf(up1), Integer.valueOf(up2), Integer.valueOf(up3), Integer.valueOf(up4), Integer.valueOf(up5), Integer.valueOf(up6),Integer.valueOf(up7),Integer.valueOf(up8), Integer.valueOf(up9), Integer.valueOf(up10)));
+        }
+        if(TBL.getSelectedIndex()==0&&TIM.getSelectedIndex()==2){
+            db.updateAudit_12(new AuditDB(_id, Integer.valueOf(up1), Integer.valueOf(up2), Integer.valueOf(up3), Integer.valueOf(up4), Integer.valueOf(up5), Integer.valueOf(up6),Integer.valueOf(up7),Integer.valueOf(up8), Integer.valueOf(up9), Integer.valueOf(up10)));
+        }
+        //Blood Test
+        if(TBL.getSelectedIndex()==1&&TIM.getSelectedIndex()==0){
+            db2.updateBloodtest(new BloodTestDB(_id, up1, up2, up3));
+        }
+        if(TBL.getSelectedIndex()==1&&TIM.getSelectedIndex()==1){
+            db2.updateBloodtest_6(new BloodTestDB(_id, up1, up2, up3));
+        }
+        if(TBL.getSelectedIndex()==1&&TIM.getSelectedIndex()==2){
+            db2.updateBloodtest_12(new BloodTestDB(_id, up1, up2, up3));
+        }
+        //MINI
+        if(TBL.getSelectedIndex()==2&&TIM.getSelectedIndex()==0){
+            db3.updateMini(new mini(up1, up2, up3, up4, _id));
+        }
+        
+        //MMQa
+        if(TBL.getSelectedIndex()==3&&TIM.getSelectedIndex()==0){
+            
+        }
+        if(TBL.getSelectedIndex()==3&&TIM.getSelectedIndex()==1){
+            
+        }
+        if(TBL.getSelectedIndex()==3&&TIM.getSelectedIndex()==2){
+            
+        }
+        //MMQb
+        if(TBL.getSelectedIndex()==4&&TIM.getSelectedIndex()==0){
+            
+        }
+        if(TBL.getSelectedIndex()==4&&TIM.getSelectedIndex()==1){
+            
+        }
+        if(TBL.getSelectedIndex()==4&&TIM.getSelectedIndex()==2){
+            
+        }
+        //Q LES Q SF
+        if(TBL.getSelectedIndex()==5&&TIM.getSelectedIndex()==0){
+            
+        }
+        if(TBL.getSelectedIndex()==5&&TIM.getSelectedIndex()==1){
+            
+        }
+        if(TBL.getSelectedIndex()==5&&TIM.getSelectedIndex()==2){
+            
+        }
+        //TLFB
+        if(TBL.getSelectedIndex()==6&&TIM.getSelectedIndex()==0){
+            
+        }
+        if(TBL.getSelectedIndex()==6&&TIM.getSelectedIndex()==1){
+            
+        }
+        if(TBL.getSelectedIndex()==6&&TIM.getSelectedIndex()==2){
+            
+        }
+        
+    }//GEN-LAST:event_BTN_UPDTActionPerformed
+
     public void saveCSV() {
+        if("".equals(PATH.getText())||PATH.getText()==null){
+            JOptionPane.showMessageDialog(null, "Select Path");
+        }
+        else{
             try{
                 TableModel model = jTable1.getModel();
-                FileWriter excel = new FileWriter(file_name);
+                FileWriter excel = new FileWriter(path+file_name);
                 for(int i = 0; i < model.getColumnCount(); i++){
                 excel.write(model.getColumnName(i) + ',');
                 }
@@ -600,6 +1614,8 @@ public class ControlPanel extends javax.swing.JFrame {
     }catch( IOException | HeadlessException ex){
         JOptionPane.showMessageDialog(null, ex.getMessage());
     }
+        }
+            
                         
         
         
@@ -644,30 +1660,102 @@ public class ControlPanel extends javax.swing.JFrame {
     private javax.swing.JButton BTN_PATH;
     private javax.swing.JButton BTN_SAVE;
     private javax.swing.JButton BTN_SHOW;
+    private javax.swing.JButton BTN_UPDT;
     private javax.swing.JTextField PATH;
     private javax.swing.JComboBox<String> TBL;
     private javax.swing.JComboBox<String> TIM;
+    private javax.swing.JTextField TXT20;
+    private javax.swing.JTextField TXT21;
+    private javax.swing.JTextField TXT22;
+    private javax.swing.JTextField TXT23;
+    private javax.swing.JTextField TXT24;
+    private javax.swing.JTextField TXT25;
+    private javax.swing.JTextField TXT26;
+    private javax.swing.JTextField TXT27;
+    private javax.swing.JTextField TXT28;
+    private javax.swing.JTextField TXT29;
+    private javax.swing.JTextField TXT30;
+    private javax.swing.JTextField TXT31;
+    private javax.swing.JTextField TXTT1;
+    private javax.swing.JTextField TXTT10;
+    private javax.swing.JTextField TXTT11;
+    private javax.swing.JTextField TXTT12;
+    private javax.swing.JTextField TXTT13;
+    private javax.swing.JTextField TXTT14;
+    private javax.swing.JTextField TXTT15;
+    private javax.swing.JTextField TXTT16;
+    private javax.swing.JTextField TXTT17;
+    private javax.swing.JTextField TXTT18;
+    private javax.swing.JTextField TXTT19;
+    private javax.swing.JTextField TXTT2;
+    private javax.swing.JTextField TXTT3;
+    private javax.swing.JTextField TXTT4;
+    private javax.swing.JTextField TXTT5;
+    private javax.swing.JTextField TXTT6;
+    private javax.swing.JTextField TXTT7;
+    private javax.swing.JTextField TXTT8;
+    private javax.swing.JTextField TXTT9;
     private javax.swing.JTextField User;
     private javax.swing.JPasswordField conpass;
     private javax.swing.JPasswordField cpassword;
+    private javax.swing.JTextField id;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;

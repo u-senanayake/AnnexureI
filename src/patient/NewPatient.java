@@ -125,6 +125,7 @@ public class NewPatient extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("New Patient");
 
         jLabel1.setText("Add New Patient");
 
@@ -662,14 +663,63 @@ public class NewPatient extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BTN_ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ADDActionPerformed
-//        if(NAME.getText()!="" && ID.getText()!=""&& ADRESS.getText()!=""&& BD_DATE.getText()!=""
-//                && BD_MONTH.getText()!=""&& BD_YEAY.getText()!=""&&
-//                CONTACT_PERSN.getText()!=""&& EMAIL.getText()!=""&& EMP.getText()!=""&& ID.getText()!=""
-//                && NAME.getText()!=""&& R_DATE.getText()!=""&& R_MONTH.getText()!=""&& R_YEAR.getText()!=""
-//                && TOWN.getText()!=""&& TP.getText()!=""){
-//            JOptionPane.showMessageDialog(null, "Please Enter all fields");
-//        }
-//        else{
+        if("".equals(NAME.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's name");
+        }
+        else if("".equals(ID.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's ID");
+        }
+        else if("".equals(BD_YEAY.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's birth year");
+        }
+        else if("".equals(BD_MONTH.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's birth month");
+        }
+        else if("".equals(BD_DATE.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's birth date");
+        }
+        
+        else if("".equals(gender)||gender==null){
+            JOptionPane.showMessageDialog(null, "Please select gender");
+        }
+        else if("".equals(religion)||religion==null){
+            JOptionPane.showMessageDialog(null, "Please selct religion");
+        }
+        else if("".equals(race)||race==null){
+            JOptionPane.showMessageDialog(null, "Please enter race");
+        }
+        
+        else if("".equals(TOWN.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's town");
+        }
+        else if("".equals(EMP.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's employement");
+        }
+        else if("".equals(EMAIL.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's e mail");
+        }
+        else if("".equals(TP.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's telephone");
+        }
+        else if("".equals(ADRESS.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's adress");
+        }
+        else if("".equals(CONTACT_PERSN.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter patient's contact person");
+        }
+        else if("".equals(alcohol_dependence_current)||alcohol_dependence_current==null){
+            JOptionPane.showMessageDialog(null, "Please cpmplete MINI");
+        }
+        else if("".equals(alcohol_abuse_current)||alcohol_abuse_current==null){
+            JOptionPane.showMessageDialog(null, "Please cpmplete MINI");
+        }
+        else if("".equals(psychotic_disoeder_current)||psychotic_disoeder_current==null){
+            JOptionPane.showMessageDialog(null, "Please cpmplete MINI");
+        }
+        else if("".equals(psychotic_disoeder_lifetime)||psychotic_disoeder_lifetime==null){
+            JOptionPane.showMessageDialog(null, "Please cpmplete MINI");
+        }
+        else{
             try{
             String id=ID.getText(),name=NAME.getText(),town=TOWN.getText(),employeement=EMP.getText()
                 ,date_birth=BD_YEAY.getText()+"-"+BD_MONTH.getText()+"-"+BD_DATE.getText(),
@@ -687,26 +737,29 @@ public class NewPatient extends javax.swing.JFrame {
             this.setVisible(false);
             Main m= new Main();
             m.setVisible(true);
+            ADRESS.setText("");
+            BD_DATE.setText("");
+            BD_MONTH.setText("");
+            BD_YEAY.setText("");
+            CONTACT_PERSN.setText("");
+            EMAIL.setText("");
+            EMP.setText("");
+            ID.setText("");
+            NAME.setText("");
+            R_DATE.setText("");
+            R_MONTH.setText("");
+            R_YEAR.setText("");
+            TOWN.setText("");
+            TP.setText("");
             }
         catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex.getMessage()+"Add Button");
-            
+        }
+        }
+        
 //        }
-        ADRESS.setText("");
-        BD_DATE.setText("");
-        BD_MONTH.setText("");
-        BD_YEAY.setText("");
-        CONTACT_PERSN.setText("");
-        EMAIL.setText("");
-        EMP.setText("");
-        ID.setText("");
-        NAME.setText("");
-        R_DATE.setText("");
-        R_MONTH.setText("");
-        R_YEAR.setText("");
-        TOWN.setText("");
-        TP.setText("");
-    }
+        
+    
         
             
         

@@ -171,6 +171,7 @@ int q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,
         BTN_CANCL = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Q LES QSF");
         setPreferredSize(new java.awt.Dimension(1530, 750));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)));

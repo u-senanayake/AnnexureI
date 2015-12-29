@@ -38,7 +38,7 @@ public class NewUser extends javax.swing.JFrame {
         sta.setText("Creating Database");
         String databaseName = "annexurei_1";
         String userName = "root";
-        String password = "";
+        String password = "root";
 
         String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
         Connection connection = DriverManager.getConnection(url,userName, password);
@@ -259,12 +259,13 @@ sta.setText(e.getMessage());
         
 
         String sql = "CREATE TABLE IF NOT EXISTS `mini` (\n" +
-"  `alcohol_dependence_current` varchar(5) NOT NULL,\n" +
+"  `id` varchar(10) NOT NULL,\n" +
 "  `alcohol_abuse_current` varchar(5) NOT NULL,\n" +
 "  `psychotic_disoeder_current` varchar(5) NOT NULL,\n" +
 "  `psychotic_disoeder_lifetime` varchar(5) NOT NULL,\n" +
-"  `id` varchar(10) NOT NULL\n" +
+"  `alcohol_dependence_current` varchar(5) NOT NULL\n" +
 ")";
+        
 
         Statement statement = connection.createStatement();
         statement.executeUpdate(sql);
@@ -586,7 +587,7 @@ sta.setText(e.getMessage());
 "  `id` varchar(10) NOT NULL,\n" +
 "  `name` varchar(30) NOT NULL,\n" +
 "  `gender` varchar(10) NOT NULL,\n" +
-"  `religion` varchar(20) NOT NULL,\n" +
+"  `religion` varchar(40) NOT NULL,\n" +
 "  `race` varchar(20) NOT NULL,\n" +
 "  `town` varchar(20) NOT NULL,\n" +
 "  `employeement` varchar(30) NOT NULL,\n" +
@@ -940,6 +941,7 @@ sta.setText(e.getMessage());
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("New User");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Controlpanel/Actions-user-group-new-icon.png"))); // NOI18N
 

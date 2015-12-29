@@ -245,6 +245,7 @@ public class MMQb extends javax.swing.JFrame {
         jRadioButton122 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MMQb");
         setPreferredSize(new java.awt.Dimension(1530, 750));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)));

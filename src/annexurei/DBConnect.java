@@ -19,7 +19,7 @@ public class  DBConnect  {
         try{
            String host="jdbc:mysql://localhost:3306/annexurei_1";
            String uName="root";
-           String uPass="";
+           String uPass="root";
            Connection conn=DriverManager.getConnection(host, uName, uPass);
  
           

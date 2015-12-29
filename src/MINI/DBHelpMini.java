@@ -5,11 +5,14 @@
  */
 package MINI;
 
+import AUDIT.AuditDB;
 import javax.swing.JOptionPane;
 import annexurei.*;
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -43,6 +46,23 @@ public class DBHelpMini {
                 catch(Exception e){}
             }
      }
+    public void updateMini(mini ad){
+        String id=ad.getId();
+        try{
+            
+                    String sql="update mini set alcohol_dependence_current=?,alcohol_abuse_current=?,psychotic_disoeder_current=?,psychotic_disoeder_lifetime=? where id='"+id+"'";
+                    pst=conn.prepareStatement(sql);
+                    pst.setString(1, ad.getAlcohol_dependence_current());
+                    pst.setString(2,ad.getAlcohol_abuse_current());
+                    pst.setString(3,ad.getPsychotic_disoeder_current());
+                    pst.setString(4,ad.getPsychotic_disoeder_lifetime());
+                    pst.execute();
+                    JOptionPane.showMessageDialog(null, "MINI Table Updated");
+                    }
+                    catch(SQLException | HeadlessException exp){
+                        JOptionPane.showMessageDialog(null, exp.getMessage());      
+                    }
+    }
     }
     
 
